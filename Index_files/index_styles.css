@@ -1,0 +1,185 @@
+/* Styles for index.html */
+
+/* Base styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    color: #333;
+}
+
+li {
+    color: #333;
+}
+
+
+
+/* Layout Styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.title-section {
+    text-align: right;
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+
+.layout-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.left-section {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px;
+    padding-bottom: 0px;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+/* Placeholder for summary text in the left section */
+.summary-text {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #555;
+    height: 50%;
+    text-align: justify;
+}
+
+/* Right Section: 60% width */
+.right-section {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    padding-top: 2px;
+}
+
+/* Plot Styling */
+.plot {
+    width: 100%;
+    height: 100%; /* Allow the plot to adapt based on the available space */
+    max-height: 100%; /* Ensures the plot fits within the section */
+    border: none;
+    margin-bottom: 10px;
+    flex-grow: 1; /* Allow the plot to expand and occupy the remaining space */
+    /*width: 100%;
+    height: 100%;
+    border: none;
+    margin-bottom: 2px;
+    object-fit: contain;*/
+}
+
+/* Slider Label */
+.label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Slider Styles 
+.slider {
+    width: 100%;
+    margin-top: 10px;
+}*/
+
+/* Bottom Right Button */
+.bottom-right {
+    width: 30%;
+    align-self: flex-end;
+    display: flex;
+    justify-content: right;
+    padding-right: 90px;
+    padding-bottom: 20px;
+}
+
+.next-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.next-button:hover {
+    background-color: #0056b3;
+}
+
+/* Grouping slider styles */
+.slider-container {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.slider-label {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.button{background-color: #007BFF;
+width: 50%;
+border-radius: 10px;}
+
+.cool-button {
+    align-self: baseline;
+    background: linear-gradient(45deg, #ffb3ba, #ffdfba);
+    border-radius: 12px;
+    border: 1px solid #555;
+    color: #555;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cool-button:hover {
+    background: linear-gradient(45deg, #ffdfba, #ffb3ba);
+    transform: scale(1.05);
+}
+
+.slider {appearance: none;
+    -webkit-appearance: none;
+    width: 50%;
+    height: 5px;
+    background: #ddd;
+    outline: none;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background:  #ffb3ba;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #555;
+}
