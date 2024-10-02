@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:5000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="./Index_files/index_styles.css">
+    <script src="./Index_files/jquery-3.6.0.min.js.download"></script>
+<meta name="Reverso extension" content="3.6.298" id="Reverso_extension___elForCheckedInstallExtension"></head>
+<body>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Page Title 
+        <div class="title-section">
+            <h1 style="color: #9e9e9e; text-align: left; padding-left: 50px;padding-top: 20px;">Group Summary Plots</h1>
+        </div>-->
+
+        <!-- Layout Grid -->
+        <div class="layout-grid">
+            
+            <!-- Left Section: Cluster Distribution Plot and Selector -->
+            <div class="left-section">
+                <div style="height: 75px;"></div>
+                <div style="background-color: #ffffff; width: 100%; height: 70%;
+                            margin-left: 100px; overflow: auto; z-index: 1;
+                            border: 1px solid #bbbbbb00; border-radius: 60px; padding: 10px;
+                            box-shadow: 3px 0px 0px 0px #dddddd5a inset; ">
+                <p><strong>Report sul Bullismo nei Studenti</strong></p>
+<p><strong>Gruppo "Sicuri"</strong></p>
+<p>I studenti del Gruppo "Sicuri" hanno risposto a una serie di domande relative al bullismo, mostrando un minimo impatto emotivo e sociale. La maggior parte dei respondenti non ha subito prepotze o violenze, ma alcuni hanno espresso sentimenti di ansia e inquietudine.</p>
+<ul>
+<li>L'incidenza del bullismo è limitata.</li>
+<li>Gli studenti del Gruppo "Sicuri" sembrano avere una percezione positiva della scuola e dei loro compagni.</li>
+<li>Nessuno ha subito prepotze fisiche o vittimato il bullismo.</li>
+</ul>
+<p><strong>Gruppo "Vittime"</strong></p>
+<p>I studenti del Gruppo "Vittime" hanno risposto a una serie di domande relative al bullismo, mostrando un impatto emotivo e sociale significativo. La maggior parte dei respondenti ha subito prepotze o violenze.</p>
+<ul>
+<li>L'incidenza del bullismo è elevata.</li>
+<li>Gli studenti del Gruppo "Vittime" sembrano avere una percezione negativa della scuola e dei loro compagni.</li>
+<li>Alcuni studenti hanno risposto di aver subito prepotze fisiche, minacce e violenze.</li>
+</ul>
+<p>In sintesi, il rapporto sottolinea che la scuola potrebbe migliorare se incoraggiasse una cultura più aperta e inclusiva.</p>
+
+                </div>
+
+                <div style="height: 70px;"></div>
+            
+                <iframe src="./Index_files/radar_plot.html" class="plot"></iframe>
+
+                <!-- Cluster Distribution Plot -->
+                <!--<iframe id="cluster-plot" src="/files/cluster_dist_plot.html" class="plot"></iframe>-->
+                
+                <!-- Cluster Selector -->
+                
+                <!--<label for="clusterSelector" class="slider-label"><b>Cluster</b></label>
+                <br>
+                <input type="range" id="clusterSelector" min="1" max="2" value="1" class="slider">-->
+
+            </div>
+
+            <!-- Right Section: Feature Importance Plot -->
+            <div class="right-section">
+                <div class="title-section">
+                    <h1 style="font-size: 40px;
+                    padding-right: 30px;
+                    padding-top: 0px;
+                    font-weight: 750;
+                    background-image: linear-gradient(to left, #553c9a, #c83075);
+                    color: transparent;
+                    background-clip: text;
+                    -webkit-background-clip: text;">
+                    CLUSTERING<br>DASHBOARD</h1>
+                </div>
+                <div style="height: 5px;"></div>
+                <iframe id="feature-importance-plot" src="./Index_files/feature_importance_plot.html" class="plot"></iframe>
+                <div style="padding-left: 55%; padding-bottom: 25px;">
+                <a href="http://127.0.0.1:5000/results" class="cool-button">Individual Analysis →</a>
+                </div>
+        
+            </div>
+        </div>
+
+        <!-- Bottom Right: Navigation Button to Results Page 
+        <div class="bottom-right">
+            <a href="/results" class="cool-button">Individual Analysis →</a>
+        </div>-->
+
+    </div>
+
+    <!-- AJAX for Cluster Plot Update -->
+    <script>
+        $(document).ready(function() {
+            $('#clusterSelector').on('input', function() {
+                var clusterNum = $(this).val();
+                
+                // AJAX request to update cluster plot
+                $.ajax({
+                    url: "/update_cluster_plot",
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        cluster_num: clusterNum
+                    }),
+                    success: function(response) {
+                        // Update the cluster plot iframe with the new URL
+                        $('#cluster-plot').attr('src', response.cluster_plot_url);
+                    },
+                    error: function(error) {
+                        console.log('Error:', error);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body></html>
