@@ -1,0 +1,160 @@
+/* Base styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    color: #333;
+}
+
+/* Back arrow */
+.back-arrow {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+}
+
+.back-arrow:hover {
+    color: #007BFF;
+}
+
+/* Container structure */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.upper-section {
+    flex: 65%;
+    display: flex;
+    /*border-bottom: 2px solid #ddd;*/
+}
+
+.lower-section {
+    flex: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centering the force plot vertically */
+    padding: 10px;
+    padding-top: 50px;
+    background-color: #fafafa;
+}
+
+/* Left side controls (in upper section) */
+.left-side {
+    flex: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-top: 2px;
+    /*border-right: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;*/
+}
+
+.label {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555555;
+}
+
+/* Grouping slider styles */
+.slider-container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.slider-label {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.button{background-color: #007BFF;
+width: 50%;
+border-radius: 10px;}
+
+.cool-button {
+    background: linear-gradient(45deg, #ffb3ba, #ffdfba);
+    border-radius: 12px;
+    border: 1px solid #555;
+    color: #555;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cool-button:hover {
+    background: linear-gradient(45deg, #ffdfba, #ffb3ba);
+    transform: scale(1.05);
+}
+
+.slider {appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    outline: none;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background:  #ffb3ba;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #555;
+}
+
+/* Drop-down styles */
+.select-id {
+    width: 80%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 30px; /* Increased space between dropdown and slider */
+}
+
+/* Right side chart */
+.right-side {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: baseline;
+    padding: 2px;
+    padding-right: 50px;
+    padding-top: 50px;
+    background-color: #fafafa;
+}
+
+iframe {
+    width: 90%;
+    height: 90%; /* Adjust height to fit the section better */
+    border: 2px solid #dddddd00;
+    border-radius: 10px;
+}
